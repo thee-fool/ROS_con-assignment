@@ -28,7 +28,7 @@ However, key parts of the pipeline are **missing** — your job is to implement 
 
 ## What You Need to Implement
 
-### Task 1: Object Detection Node ⭐⭐⭐ (Primary)
+### Task 1: Object Detection Node 
 
 **File:** `src/bme_gazebo_sensors_py/bme_gazebo_sensors_py/object_detection.py`
 
@@ -61,7 +61,7 @@ The `identify_image()` method and model loading are stubbed out with `TODO` comm
 
 ---
 
-### Task 2: Exploration Controller ⭐⭐ (Required)
+### Task 2: Exploration Controller 
 
 **File:** `src/object_finder/object_finder/controller_node.py`
 
@@ -72,7 +72,7 @@ The `detected_callback()` method is stubbed. You must:
 
 ---
 
-### Task 3: Post-Pickup Exploration Reset ⭐ (Bonus)
+### Task 3: Post-Pickup Exploration Reset
 
 **File:** `src/explore/src/explore.cpp`
 
@@ -124,19 +124,6 @@ ros2 run bme_ros2_simple_arm_py object_detection
 ### Testing your detection in RViz
 Open RViz → Add Display → By Topic → `/detection/image` to see your detection output.
 
----
-
-## Evaluation Criteria
-
-| Criteria | Weight |
-|---|---|
-| Object detection accuracy and reliability | 30% |
-| Navigation towards detected object | 25% |
-| Exploration pause/resume integration | 20% |
-| Code quality and documentation | 15% |
-| Bonus: Post-pickup reset (Task 3) | 10% |
-
----
 
 ## Architecture Reference
 
@@ -148,5 +135,39 @@ set_target_client → tells detection what to find
 object_pickup → arm IK + pick sequence (listens to /Object_position)
 object_detection (arm pkg) → depth→3D transform (listens to /centroid)
 ```
+
+---
+
+## 📦 Submission Guidelines
+
+Please submit **both** of the following:
+
+### 1. Zipped Project Directory
+
+
+Your zip should include:
+- All source files under `src/`
+- Any modified launch files or config files
+
+
+
+### 2. Demo Video
+
+Record a screen capture (or camera recording of your monitor) showing the full pipeline running end-to-end in Gazebo. Your video should clearly show:
+
+1. **Robot spawning** in the Gazebo world with the target object visible
+2. **Autonomous exploration** — the robot navigating the environment
+3. **Object detection** — the moment the target is detected (RViz `/detection/image` feed recommended)
+4. **Navigation towards the object** — robot approaching the detected target
+5. **Arm pickup** — the robot arm successfully picking up the object
+
+**Video requirements:**
+- Minimum length: ~1–2 minutes covering all stages above
+- Acceptable formats: `.mp4`, `.mov`, or a YouTube/Google Drive link.
+
+
+
+
+
 
 **Good luck! 🚀**
