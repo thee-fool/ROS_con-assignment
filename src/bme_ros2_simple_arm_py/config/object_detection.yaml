@@ -1,0 +1,10 @@
+object_detector:
+  ros__parameters:
+    color_lower: [0, 100, 100]
+    color_upper: [10, 255, 255]
+    min_contour_area: 100
+    depth_valid_range: [0.1, 2.0]
+    camera_frame: "camera_link"
+    base_frame: "base_link"
+    display_scale: 0.6
+    debug: true
