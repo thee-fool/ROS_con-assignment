@@ -1,5 +1,7 @@
 # ROS BOT
-
+```
+NOTE: You may be missing lot of packages when you will run the below command it will throw error or when you build your package it will give cmake error install those missing dependenies.
+```
 ## Modules required
   - cvzone
   - ultralytics
